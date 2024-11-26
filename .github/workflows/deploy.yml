@@ -1,0 +1,36 @@
+name: Deploy to Github Pages
+
+on:
+  # Trigger the workflow every time a change is pushed to the main branch
+  push:
+    branches: [main]
+    # Allows to run this workflow manually
+    workflow_dispatch:
+
+# Allow this job to clone the repo and create a page deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout the repository using git
+        uses: actions/checkout@v4
+      - name: Install, build, and upload the site
+        uses: withastro/action@v3
+        with:
+          node-version: 22
+          package-manager: pnpm@latest
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to github-pages
+        id: deployment
+        uses: actions/deploy-pages@v4
