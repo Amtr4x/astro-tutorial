@@ -5,4 +5,5 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://amtr4x.github.io",
   base: "/astro-tutorial",
+  trailingSlash: "ignore",
 });
