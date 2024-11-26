@@ -9,7 +9,7 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-[Go back](../blog)
+[Go back](/astro-tutorial/blog)
 
 # My first Blog Post
 
