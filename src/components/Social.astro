@@ -1,0 +1,21 @@
+---
+interface Props {
+  platform: string;
+  iconPath: string;
+  iconAlt: string;
+}
+const { platform, iconPath, iconAlt } = Astro.props;
+---
+
+<a href={platform}><img src={iconPath} alt={iconAlt} /></a>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+</style>

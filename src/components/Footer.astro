@@ -1,29 +1,69 @@
 ---
 import githubLogo from "../assets/github-logo.svg";
+import instagramLogo from "../assets/instagram-logo.svg";
+import linkedInLogo from "../assets/linkedin-logo.svg";
+import Social from "./Social.astro";
 
-const platform = "GitHub";
-const logoPath = githubLogo.src;
-const altText = platform + " logo";
-const linkTitle = `Go to ${platform}`;
+const github = {
+  link: "https://github.com/amtr4x",
+  logoPath: githubLogo.src,
+  altText: "Github Logo",
+};
+
+const instagram = {
+  link: "#",
+  logoPath: instagramLogo.src,
+  altText: "Instagram logo",
+};
+
+const linkedIn = {
+  link: "#",
+  logoPath: linkedInLogo.src,
+  altText: "LinkedIn logo",
+};
 ---
 
-<div>
-  <p>Follow my projects on {platform}</p>
-  <a href="https://github.com/Amtr4x" title={linkTitle}>
-    <img width="30" height="30" src={logoPath} alt={altText} />
-  </a>
-</div>
+<ul>
+  <li>
+    <Social
+      platform={github.link}
+      iconPath={github.logoPath}
+      iconAlt={github.altText}
+    />
+  </li>
+  <li>
+    <Social
+      platform={instagram.link}
+      iconPath={instagram.logoPath}
+      iconAlt={instagram.altText}
+    />
+  </li>
+  <li>
+    <Social
+      platform={linkedIn.link}
+      iconPath={linkedIn.logoPath}
+      iconAlt={linkedIn.altText}
+    />
+  </li>
+</ul>
 
 <style>
-  div {
+  ul {
     display: flex;
     gap: 8px;
     align-items: center;
     justify-content: center;
+    list-style-type: none;
   }
 
-  p {
-    font-weight: 600;
+  li:hover {
+    transition-duration: 0.3s;
+    scale: calc(105%);
+  }
+
+  li:active {
+    transition-duration: 0.3s;
+    scale: calc(95%);
   }
 
   img {
