@@ -13,6 +13,10 @@ const skills = ["HTML", "CSS", "Javascript", "React", "Astro", "Writing Docs"];
 const happy: boolean = true;
 const finished: boolean = false;
 const goal: number = 3;
+
+const colorPink: string = "#f32589";
+const fontMedium: number = 600;
+const textUpper: string = "uppercase";
 ---
 
 <html lang="en">
@@ -45,8 +49,8 @@ const goal: number = 3;
       }
     </ul>
     <p>My skills are:</p>
-    <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+    <ul class="skills_list">
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
 
     {happy && <p>I am happy to be learning Astro!</p>}
@@ -59,4 +63,22 @@ const goal: number = 3;
       )
     }
   </body>
+  <style define:vars={{ colorPink, fontMedium, textUpper }}>
+    h1 {
+      color: rgb(156, 0, 100);
+      font-size: 3em;
+    }
+
+    .skill {
+      color: var(--colorPink);
+      list-style-type: none;
+      font-weight: var(--fontMedium);
+      text-transform: var(--textUpper);
+    }
+
+    .skills_list {
+      display: flex;
+      gap: 8px;
+    }
+  </style>
 </html>
