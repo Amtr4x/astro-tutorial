@@ -1,6 +1,7 @@
 ---
 import "./styles/global.css";
 import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 
 const title: string = "About Me";
 
@@ -61,6 +62,8 @@ const textUpper: string = "uppercase";
         <p>My goal is not 3 days</p>
       )
     }
+
+    <Footer />
   </body>
   <style define:vars={{ colorPink, fontMedium, textUpper }}>
     h1 {

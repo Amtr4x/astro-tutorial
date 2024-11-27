@@ -1,0 +1,33 @@
+---
+import githubLogo from "../assets/github-logo.svg";
+
+const platform = "GitHub";
+const logoPath = githubLogo.src;
+const altText = platform + " logo";
+const linkTitle = `Go to ${platform}`;
+---
+
+<div>
+  <p>Follow my projects on {platform}</p>
+  <a href="https://github.com/Amtr4x" title={linkTitle}>
+    <img width="30" height="30" src={logoPath} alt={altText} />
+  </a>
+</div>
+
+<style>
+  div {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  p {
+    font-weight: 600;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+</style>
