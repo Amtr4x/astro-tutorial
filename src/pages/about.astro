@@ -1,5 +1,6 @@
 ---
 import "./styles/global.css";
+import Navigation from "../components/Navigation.astro";
 
 const title: string = "About Me";
 
@@ -30,11 +31,7 @@ const textUpper: string = "uppercase";
     <title>{title}</title>
   </head>
   <body>
-    <ul>
-      <li><a href="/astro-tutorial/">Home</a></li>
-      <li><a href="/astro-tutorial/about/">About</a></li>
-      <li><a href="/astro-tutorial/blog/">Blog</a></li>
-    </ul>
+    <Navigation />
     <h1>{title}</h1>
 
     <p>Here are a few facts about me:</p>
