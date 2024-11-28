@@ -1,0 +1,52 @@
+---
+import Footer from "../components/Footer.astro";
+const { frontmatter } = Astro.props;
+---
+
+<body>
+  <h1>{frontmatter.title}</h1>
+
+  <p>Written by <span>{frontmatter.author}</span></p>
+  <p>Publish date: {frontmatter.pubDate}</p>
+  <img
+    src={frontmatter.image.url}
+    alt={frontmatter.image.alt}
+    width="300"
+    height="300"
+  />
+  <p class="description"><em>{frontmatter.description}</em></p>
+  <hr />
+  <slot />
+  <Footer />
+</body>
+<style>
+  body {
+    padding: 8px;
+  }
+
+  h1 {
+    color: #17008f;
+  }
+
+  p {
+    font-weight: 600;
+  }
+
+  span {
+    color: #d12020;
+  }
+
+  hr {
+    margin-block: 20px;
+  }
+
+  img {
+    border-radius: 8px;
+  }
+
+  .description {
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #333333;
+  }
+</style>
