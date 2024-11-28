@@ -1,11 +1,9 @@
 ---
-import Footer from "../components/Footer.astro";
+import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<body>
-  <h1>{frontmatter.title}</h1>
-
+<BaseLayout pageTitle={frontmatter.title}>
   <p>Written by <span>{frontmatter.author}</span></p>
   <p>Publish date: {frontmatter.pubDate}</p>
   <img
@@ -17,9 +15,8 @@ const { frontmatter } = Astro.props;
   <p class="description"><em>{frontmatter.description}</em></p>
   <hr />
   <slot />
-  <Footer />
-</body>
-<style>
+</BaseLayout>
+<style is:global>
   body {
     padding: 8px;
   }
