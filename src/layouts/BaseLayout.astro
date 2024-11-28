@@ -1,8 +1,13 @@
 ---
 import "../assets/styles/global.css";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
-const pageTitle: string = "Home Page";
+interface Props {
+  pageTitle: string;
+}
+
+const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
@@ -14,8 +19,13 @@ const pageTitle: string = "Home Page";
     <title>{pageTitle}</title>
   </head>
   <body>
-    <BaseLayout pageTitle={pageTitle}>
-      <h2>My awsome layout</h2>
-    </BaseLayout>
+    <Header />
+    <h1>{pageTitle}</h1>
+    <slot />
+    <Footer />
+
+    <script>
+      import "../scripts/menu.ts";
+    </script>
   </body>
 </html>
