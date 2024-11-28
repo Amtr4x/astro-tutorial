@@ -7,7 +7,6 @@ body {
   margin: 0 auto;
   width: 100%;
   max-width: 80ch;
-  padding: 1rem;
   line-height: 1.5;
 }
 
@@ -18,6 +17,10 @@ body {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
+}
+
+main {
+  padding: 1rem;
 }
 
 .nav-links {
@@ -50,8 +53,8 @@ h1 {
 
 @media screen and (min-width: 636px) {
   .nav-links {
-    margin-left: 5em;
-    display: block;
+    display: flex;
+    justify-content: center;
     position: static;
     width: auto;
     background: none;
@@ -78,4 +81,11 @@ h1 {
   height: 5px;
   margin-bottom: 10px;
   background-color: #ff9776;
+}
+
+Footer {
+  position: fixed;
+  bottom: 0;
+  width: 100dvw;
+  margin: 0;
 }
