@@ -1,0 +1,23 @@
+---
+const pageTitle: string = "Blog";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/">Home Page</a></li>
+      <li><a href="/about/">About Page</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <h1>{pageTitle}</h1>
+
+    <p>This is where I will post about my journey learning Astro.</p>
+  </body>
+</html>
