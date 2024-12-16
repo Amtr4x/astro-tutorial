@@ -65,11 +65,14 @@ h1 {
 
 @media screen and (min-width: 636px) {
   .nav-links {
-    margin-left: 5em;
-    display: block;
+    display: flex;
+    padding-inline: 0;
+    justify-content: space-around;
+    align-items: center;
     position: static;
     width: auto;
     background: none;
+    list-style-type: none;
   }
 
   .nav-links a {
@@ -80,4 +83,18 @@ h1 {
   .hamburger {
     display: none;
   }
+
+  nav {
+    padding-inline: 0;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100dvw;
+}
+
+footer > ul {
+  padding-inline: 10px;
 }
