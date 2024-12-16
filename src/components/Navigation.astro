@@ -1,0 +1,13 @@
+---
+import { pageRoutes } from "../lib/routes";
+---
+
+<ul>
+  {
+    pageRoutes.map((route) => (
+      <li>
+        <a href={route.link}>{route.name}</a>
+      </li>
+    ))
+  }
+</ul>
