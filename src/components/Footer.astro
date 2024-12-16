@@ -1,0 +1,26 @@
+---
+import Social from "./Social.astro";
+---
+
+<footer>
+  <p>Follow me on...</p>
+  <ul>
+    <li><Social platform="github" username="unknown" /></li>
+    <li><Social platform="linkedin" username="unknown" /></li>
+    <li><Social platform="x" username="unknown" /></li>
+  </ul>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    gap: 0.3rem;
+    margin-top: 2rem;
+  }
+
+  ul {
+    display: inherit;
+    gap: inherit;
+    list-style-type: none;
+  }
+</style>
