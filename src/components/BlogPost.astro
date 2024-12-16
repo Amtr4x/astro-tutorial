@@ -1,0 +1,20 @@
+---
+interface Props {
+  url: string;
+  title: string;
+}
+
+const { url, title }: Props = Astro.props;
+---
+
+<li><a href={url}>{title}</a></li>
+
+<style>
+  li {
+    list-style-type: "⭐ ";
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>
